@@ -1,0 +1,11 @@
+version: 0.0
+os: linux
+files:
+  - source: /scripts/deploy.sh
+    destination: /opt/deployment/
+
+hooks:
+  AfterInstall:
+    - location: /opt/deployment/deploy.sh
+      timeout: 300
+      runas: root
