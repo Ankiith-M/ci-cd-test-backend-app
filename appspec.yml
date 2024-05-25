@@ -6,10 +6,10 @@ files:
     
 hooks:
   AfterInstall:
-    - location: /home/ubuntu/trailcicd/set_permission.sh
+    - location: /scripts/set_permission.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: /home/ubuntu/trailcicd/deploy.sh
+    - location: /scripts/deploy.sh
       timeout: 300
       runas: root
