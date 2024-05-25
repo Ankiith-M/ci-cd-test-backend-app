@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: scripts
-    destination: /home/ubuntu/trailcicd
+  - source: /
+    destination: /
     
 hooks:
   AfterInstall:
