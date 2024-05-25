@@ -1,11 +1,17 @@
 version: 0.0
 os: linux
 files:
-  - source: /scripts/deploy.sh
+  - source: scripts/deploy.sh
+    destination: /opt/deployment/
+  - source: scripts/set_permissions.sh
     destination: /opt/deployment/
 
 hooks:
   BeforeInstall:
+    - location: /opt/deployment/set_permissions.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
     - location: /opt/deployment/deploy.sh
       timeout: 300
       runas: root
