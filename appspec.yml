@@ -1,13 +1,13 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: source
     destination: /opt/deployment/
     
 hooks:
   AfterInstall:
-    - location: scripts/set_permission.sh
+    - location: /opt/deployment/scripts/set_permission.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: scripts/deploy.sh
+    - location: /opt/deployment/scripts/deploy.sh
