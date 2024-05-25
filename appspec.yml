@@ -2,14 +2,12 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /opt/deployment/
+    destination: /home/ubuntu/trailcicd
     
 hooks:
   AfterInstall:
-    - location: /opt/deployment/scripts/set_permissions.sh
+    - location: /home/ubuntu/trailcicd/scripts/set_permission.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: /opt/deployment/deploy.sh
-      timeout: 300
-      runas: root
+    - location: /home/ubuntu/trailcicd/scripts/deploy.sh
