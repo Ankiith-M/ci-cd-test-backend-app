@@ -6,8 +6,10 @@ files:
     
 hooks:
   AfterInstall:
-    - location: /opt/deployment/scripts/set_permission.sh
+    - location: /home/ubuntu/set_permission.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: /opt/deployment/scripts/deploy.sh
+    - location: /home/ubuntu/deploy.sh
+      timeout: 300
+      runas: root
