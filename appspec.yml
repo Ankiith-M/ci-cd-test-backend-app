@@ -1,15 +1,12 @@
 version: 0.0
 os: linux
-files:
-  - source: /
-    destination: /
-    
+   
 hooks:
   AfterInstall:
-    - location: scripts/set_permission.sh
+    - location: scripts/set_permission
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: scripts/deploy.sh
+    - location: scripts/deploy
       timeout: 300
       runas: root
