@@ -1,12 +1,12 @@
 version: 0.0
 os: linux
-   
+files:
+  - source: /
+    destination: /home/ubuntu/cicd
 hooks:
   AfterInstall:
-    - location: scripts/set_permission
+    - location: afterinstall.sh
       timeout: 300
-      runas: root
   ApplicationStart:
-    - location: scripts/deploy
+    - location: applicationstart.sh
       timeout: 300
-      runas: root
